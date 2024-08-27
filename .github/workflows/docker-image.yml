@@ -90,7 +90,7 @@ jobs:
         env:
           # https://docs.github.com/en/actions/security-guides/security-hardening-for-github-actions#using-an-intermediate-environment-variable
           TAGS: |
-            ghcr.io/${{env.REPOSITORY}}:${{ env.RUN_NUMBER }}
+            ghcr.io/${{ github.repository }}:${{ github.run_number }}
             ghcr.io/${{ github.repository }}:latest
           DIGEST: ${{ steps.build-and-push.outputs.digest }}
         # This step uses the identity token to provision an ephemeral certificate
